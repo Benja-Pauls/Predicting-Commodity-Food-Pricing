@@ -10,7 +10,7 @@ MAIC Research Group 1 (2023-2024 cohort) of 8 students from Milwaukee School of 
 ## Data Folder Setup
 1. Create a directory within the project called `data`. This repo is setup to ignore a `data` folder when tracking changes.<br>
 2. Download data into the `data` folder from one of the following options<br>
-    1. Download temporary dataset from kaggle for early experimenting: [Global Food Prices](https://www.kaggle.com/datasets/jboysen/global-food-prices)
+    1. Download dataset from kaggle for early experimenting: [Global Food Prices](https://www.kaggle.com/datasets/jboysen/global-food-prices)
 
     2. Download the data we hopefully have access to from the Food and Agriculture Organization of the United Nations (FAO)
 
