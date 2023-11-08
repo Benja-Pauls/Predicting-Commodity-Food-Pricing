@@ -2,6 +2,7 @@
 MAIC Research Group 1 (2023-2024 cohort) of 8 students from Milwaukee School of Engineering (MSOE) working together with two professors to develop an AI algorithm to predict commodity food pricing.
 
 ## Cloning Repo On Rosie
+You can also clone this repo locally, but it will be beneficial to have this repo on Rosie to utilize the computational power.
 1. Navigate to the [Rosie Dashboard](https://dh-ood.hpc.msoe.edu/pun/sys/dashboard/)
 2. Navigate to "Clusters" and then ">_Rosie Shell Access"
 3. Navigate to your desired folder to clone the repo into
