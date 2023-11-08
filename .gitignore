@@ -1,2 +1,8 @@
 # Ignore the data directory
 data/
+.venv/
+.env/
+
+
+
+
