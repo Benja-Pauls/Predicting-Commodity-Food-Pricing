@@ -27,7 +27,8 @@ You can also clone this repo locally, but it will be beneficial to have this rep
 * **Text Prompting for RL Response (2009):** [Reinforcement Learnign for Mapping Instructions to Actions](http://people.csail.mit.edu/branavan/papers/acl2009.pdf)
     * **Possibly Newer Paper:** [Mapping Instructions and Visual Observations to Actions with RL](https://ar5iv.labs.arxiv.org/html/1704.08795) & [Associated Paper](https://arxiv.org/pdf/1704.08795.pdf)
 * **RNNs for Stock Trendlines:** [Deep Reinforcement Learning for Time Series: Playing Idealized Trading Games](https://arxiv.org/ftp/arxiv/papers/1803/1803.03916.pdf) with [Associated GitHub Repo](https://github.com/golsun/deep-RL-trading)
-
+* **Sentiment Analysis of USDA Announcements:** [Market Uncertainty and Sentiment Around USDA Announcements](https://deliverypdf.ssrn.com/delivery.php?ID=152013104065026067086094070025031102101074051042007060126090024090122107127007073073055020029097121126020120094007105127010080059016075034036069004022096023116075014087047066072125025004077007070086065121027107121127127126070104086077106111085104125&EXT=pdf&INDEX=TRUE)
+* **Stocks-to-use Ratio:** [Stocks-to-use ratios and prices as indicators of vulnerability to spikes in global cereal markets](https://are.berkeley.edu/~bwright/Wright/Publications_files/Stocks%20to%20use.pdf)
 * **HUGE LIST OF RL RESOURCES:** [GitHub Repo](https://github.com/zhjohnchan/awesome-reinforcement-learning-in-nlp)
 * **LIST OF ANOMALY DETECTION RESOURCES:** [GitHub Repo](https://github.com/yzhao062/anomaly-detection-resources)
 
