@@ -1,7 +1,7 @@
 # Predicting-Commodity-Food-Pricing
 MAIC Research Group 1 (2023-2024 cohort) of 8 students from Milwaukee School of Engineering (MSOE) working together with two professors to develop an AI algorithm to predict commodity food pricing.
 
-![MicrosoftTeams-image (1)](https://github.com/Benja-Pauls/Predicting-Commodity-Food-Pricing/assets/73416124/1f89a5f8-9686-4f61-8402-a44769cd0ed8)<img src="MicrosoftTeams-image (1).jpg" alt="MicrosoftTeams-image (1)" width="200"/>
+<img src="https://github.com/Benja-Pauls/Predicting-Commodity-Food-Pricing/assets/73416124/1f89a5f8-9686-4f61-8402-a44769cd0ed8" alt="MicrosoftTeams-image (1)" width="200"/>
 
 
 ## Cloning Repo On Rosie
