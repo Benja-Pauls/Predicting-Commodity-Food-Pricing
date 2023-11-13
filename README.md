@@ -12,14 +12,14 @@ You can also clone this repo locally, but it will be beneficial to have this rep
 4. Clone repo via ssh: `git clone git@github.com:Benja-Pauls/Predicting-Commodity-Food-Pricing.git`
 
 ## Git commands
-If your repo is on rosie, you will need to go to `>_Rosie Shell Access` and navigate to your repo's location. From there, you will run git commands in the terminal.<br>If your repo is on a pc somewhere, use git bash or Github Desktop.<br><br>
+If your repo is on Rosie, you will need to go to `>_Rosie Shell Access` and navigate to your repo's location. From there, you will run git commands in the terminal.<br>If your repo is on a pc somewhere, use git bash or Github Desktop.<br><br>
 To update your local repo:
 1. `git fetch`
 2. `git pull`<br><br>
 
 To commit your local changes
 1. `git status` to view your changes in your local repo
-2. `git add .`/`git add -A` to add all local changes or `git add <file_location>` to add a single file. You can then use `git status` again to make sure your have added the right files
+2. `git add .` or `git add -A` to add all local changes or `git add <file_location>` to add a single file. You can then use `git status` again to make sure your have added the right files
 3. `git commit -m "<your_commit_message"` Example messages: "Add run.py to make running the project easier", "Fix bug in the LLM api", "Remove unnecessary code from code.py"<br><br>
 
 To push your changes to the remote repository (you first need to commit your local changes, see above)
