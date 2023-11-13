@@ -11,6 +11,24 @@ You can also clone this repo locally, but it will be beneficial to have this rep
 3. Navigate to your desired folder to clone the repo into
 4. Clone repo via ssh: `git clone git@github.com:Benja-Pauls/Predicting-Commodity-Food-Pricing.git`
 
+## Git commands
+If your repo is on rosie, you will need to go to `>_Rosie Shell Access` and navigate to your repo's location. From there, you will run git commands in the terminal.<br>If your repo is on a pc somewhere, use git bash or Github Desktop.<br><br>
+To update your local repo:
+1. `git fetch`
+2. `git pull`<br><br>
+
+To commit your local changes
+1. `git status` to view your changes in your local repo
+2. `git add .`/`git add -A` to add all local changes or `git add <file_location>` to add a single file. You can then use `git status` again to make sure your have added the right files
+3. `git commit -m "<your_commit_message"` Example messages: "Add run.py to make running the project easier", "Fix bug in the LLM api", "Remove unnecessary code from code.py"<br><br>
+
+To push your changes to the remote repository (you first need to commit your local changes, see above)
+1. `git fetch`
+2. `git pull`
+3. Handle any merge conflicts if there are any. This can get messy if it happens. DO NOT be afraid to ask for help. Remember, if you mess up your local repo, you can always reset to your most recent commit using `git reset --hard`. 
+4. `git push`
+       
+
 ## Data Folder Setup
 1. Create a directory within the project called `data`. This repo is setup to ignore a `data` folder when tracking changes.<br>
 2. Download data into the `data` folder from one of the following options<br>
