@@ -9,7 +9,7 @@ You can also clone this repo locally, but it will be beneficial to have this rep
 1. Navigate to the [Rosie Dashboard](https://dh-ood.hpc.msoe.edu/pun/sys/dashboard/)
 2. Navigate to "Clusters" and then ">_Rosie Shell Access"
 3. Navigate to your desired folder to clone the repo into
-4. Clone repo via ssh: `git clone git@github.com:Benja-Pauls/Predicting-Commodity-Food-Pricing.git`
+4. Clone repo via ssh `git clone git@github.com:Benja-Pauls/Predicting-Commodity-Food-Pricing.git` or https `git clone https://github.com/Benja-Pauls/Predicting-Commodity-Food-Pricing.git`
 
 ## Git commands
 If your repo is on Rosie, you will need to go to `>_Rosie Shell Access` and navigate to your repo's location. From there, you will run git commands in the terminal.<br>If your repo is on a pc somewhere, use git bash or Github Desktop.<br><br>
