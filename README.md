@@ -52,12 +52,12 @@ To push your changes to the remote repository (you first need to commit your loc
 
 ## Learning Resources
 * **Getting Started with ML/DL**
-       * a
-       * b
+    * a
+    * b
 * **Reinforcement Learning**
-       * [Pong to Pixels: Intro to Deep RL](http://karpathy.github.io/2016/05/31/rl/)
-       * **Deep Q-Learning:**
-              * https://www.youtube.com/watch?v=rFwQDDbYTm4
-              * https://www.tensorflow.org/agents/tutorials/0_intro_rl
-              * https://towardsdatascience.com/value-based-methods-in-deep-reinforcement-learning-d40ca1086e1
-              * https://www.baeldung.com/cs/q-learning-vs-deep-q-learning-vs-deep-q-network
+    * [Pong to Pixels: Intro to Deep RL](http://karpathy.github.io/2016/05/31/rl/)
+    * **Deep Q-Learning:**
+        * https://www.youtube.com/watch?v=rFwQDDbYTm4
+        * https://www.tensorflow.org/agents/tutorials/0_intro_rl
+        * https://towardsdatascience.com/value-based-methods-in-deep-reinforcement-learning-d40ca1086e1
+        * https://www.baeldung.com/cs/q-learning-vs-deep-q-learning-vs-deep-q-network
