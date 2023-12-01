@@ -36,7 +36,7 @@ To push your changes to the remote repository (you first need to commit your loc
 
     2. Download the data we hopefully have access to from the Food and Agriculture Organization of the United Nations (FAO)
   
-## Additional Resources
+## Research Resources
 * **History of RL & Their Applications:** [Diffusion Models For Time Series Applications: A Survey](https://arxiv.org/pdf/2305.00624.pdf) & [Beyond Deep Reinforcement Learning: A Tutorial on Generative Diffusion Models in Network Optimization](https://arxiv.org/pdf/2308.05384.pdf)
 * **Rainbow RL:** [Rainbow: Combining Improvements in Deep Reinforcement Learning](https://arxiv.org/pdf/1710.02298.pdf)
 * **DQL For Financial Analysis:** [Robust Forex Trading with Dep Q Network (DQN)](https://core.ac.uk/download/pdf/233618241.pdf)
@@ -50,3 +50,14 @@ To push your changes to the remote repository (you first need to commit your loc
 * **HUGE LIST OF RL RESOURCES:** [GitHub Repo](https://github.com/zhjohnchan/awesome-reinforcement-learning-in-nlp)
 * **LIST OF ANOMALY DETECTION RESOURCES:** [GitHub Repo](https://github.com/yzhao062/anomaly-detection-resources)
 
+## Learning Resources
+* **Getting Started with ML/DL**
+       * a
+       * b
+* **Reinforcement Learning**
+       * [Pong to Pixels: Intro to Deep RL](http://karpathy.github.io/2016/05/31/rl/)
+       * **Deep Q-Learning:**
+              * https://www.youtube.com/watch?v=rFwQDDbYTm4
+              * https://www.tensorflow.org/agents/tutorials/0_intro_rl
+              * https://towardsdatascience.com/value-based-methods-in-deep-reinforcement-learning-d40ca1086e1
+              * https://www.baeldung.com/cs/q-learning-vs-deep-q-learning-vs-deep-q-network
