@@ -51,6 +51,7 @@ To push your changes to the remote repository (you first need to commit your loc
 * **LIST OF ANOMALY DETECTION RESOURCES:** [GitHub Repo](https://github.com/yzhao062/anomaly-detection-resources)
 
 ## Learning Resources
+
 * **Getting Started with ML/DL**
     * a
     * b
