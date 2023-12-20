@@ -37,6 +37,7 @@ To push your changes to the remote repository (you first need to commit your loc
     2. Download the data we hopefully have access to from the Food and Agriculture Organization of the United Nations (FAO)
   
 ## Research Resources
+* **History of Stock Analysis Using AI:** [Literature Review](https://www.sciencedirect.com/science/article/pii/S0957417422001452)
 * **History of RL & Their Applications:** [Diffusion Models For Time Series Applications: A Survey](https://arxiv.org/pdf/2305.00624.pdf) & [Beyond Deep Reinforcement Learning: A Tutorial on Generative Diffusion Models in Network Optimization](https://arxiv.org/pdf/2308.05384.pdf)
 * **Rainbow RL:** [Rainbow: Combining Improvements in Deep Reinforcement Learning](https://arxiv.org/pdf/1710.02298.pdf)
 * **DQL For Financial Analysis:** [Robust Forex Trading with Dep Q Network (DQN)](https://core.ac.uk/download/pdf/233618241.pdf)
