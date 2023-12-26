@@ -1,8 +1,11 @@
 # Ignore the data directory
 data/
+
+# Ignore the virtual environment
 .venv/
 .env/
 
-
+# for the mac users
+.DS_Store
 
 
