@@ -52,10 +52,18 @@ To push your changes to the remote repository (you first need to commit your loc
 * **LIST OF ANOMALY DETECTION RESOURCES:** [GitHub Repo](https://github.com/yzhao062/anomaly-detection-resources)
 
 ## Learning Resources
-
+* **Meeting Slideshows**
+    * [Meeting 1 (Intro to Project)](https://msoe365-my.sharepoint.com/:p:/g/personal/paulsonb_msoe_edu/EW4vvBaQ-2lEiQ8JT0SyGrABPAw2XX_gmUFVMPbnu3rgEQ?e=FbcXzu)
+    * [Meeting 2 (Intro to ML & RL)](https://msoe365-my.sharepoint.com/:p:/g/personal/paulsonb_msoe_edu/EXE4yy6XJd1JmCw8Vkv7kT0BPDHKvm31xhIi8ceT6H_oYA?e=WVBrDF)
+    * [Meeting 3 (Structure & Ideas)](https://msoe365-my.sharepoint.com/:p:/g/personal/paulsonb_msoe_edu/EYL6I-JCwN9Bm4NDayM0d7wB4gMfGOAuflNXutgejpXfGA?e=AVRxD9)
+    * [Meeting 4 (Where's the Data?)](https://msoe365-my.sharepoint.com/:p:/g/personal/paulsonb_msoe_edu/EdzO6Qa7HPFHkRuGlNOmBi0BlgbYY8L9ZpDlSUrCOfBXFA?e=jPgi4G)
+    * Meeting 5 (HacksGiving Hackathon) -- no slides
+    * [Meeting 6 (Moving Forward with Transformers)](https://msoe365-my.sharepoint.com/:p:/g/personal/paulsonb_msoe_edu/Ec1y0nHl5AVOit_HUJYllfcBIOBYmoYCjHs1TxCmIyRMUg?e=Mo2cvL)
 * **Getting Started with ML/DL**
-    * a
-    * b
+    * **Animated Slides About Basics of ML:** https://msoe365-my.sharepoint.com/:p:/g/personal/paulsonb_msoe_edu/EXE4yy6XJd1JmCw8Vkv7kT0BPDHKvm31xhIi8ceT6H_oYA?e=WVBrDF
+    * **3Blue1Brown Video Series:** https://www.youtube.com/watch?v=aircAruvnKk&t=1s
+    * **Intro to Tensorflow (Getting Started with AI):** https://www.tensorflow.org/learn
+    * **Intro to PyTorch (Advanced AI Building):** https://pytorch.org/tutorials/beginner/basics/intro.html
 * **Reinforcement Learning**
     * [Pong to Pixels: Intro to Deep RL](http://karpathy.github.io/2016/05/31/rl/)
     * **Deep Q-Learning:**
@@ -63,3 +71,4 @@ To push your changes to the remote repository (you first need to commit your loc
         * https://www.tensorflow.org/agents/tutorials/0_intro_rl
         * https://towardsdatascience.com/value-based-methods-in-deep-reinforcement-learning-d40ca1086e1
         * https://www.baeldung.com/cs/q-learning-vs-deep-q-learning-vs-deep-q-network
+    * **Online Resources:** [Mini Course in Dynamic Structural Econometrics, UAB, September 12-16, 2022](https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fbschjerning%2Fdp_uab&data=05%7C02%7Cpaulsonb%40msoe.edu%7C41454f138348425a3e3908dbfb26c330%7C4046ceacfdd346c9ac80b7c4a49bab70%7C0%7C0%7C638379916269630594%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=DMs8pfnfgW%2B4TT7B%2Bx2TlbV%2B96glzTVu%2B%2BXwEtAM180%3D&reserved=0)
