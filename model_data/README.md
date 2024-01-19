@@ -1,0 +1,1 @@
+This folder is dedicated to hosting data that will be utilized by the model. While the form-factor of the model_data may vary as more experiments are conducted, each will be a csv containing un-numericalized data with both input(s) and output columns for each training instance (row).
