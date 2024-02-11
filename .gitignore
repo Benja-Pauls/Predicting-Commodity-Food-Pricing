@@ -2,6 +2,7 @@
 data/
 all_data/
 cleaned_data/
+saved_models/
 
 # Ignore the virtual environment
 .venv/
