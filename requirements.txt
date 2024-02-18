@@ -1,7 +1,7 @@
 numpy
 pandas
 matplotlib
-tesnforflow
+tensorflow
 scikit-learn
 keras
 nltk
