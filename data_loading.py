@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
 import tensorflow as tf
+import torch
 import os
 
 
@@ -63,7 +64,7 @@ def divide_inputs_and_outputs(row, output_column_name='Price'):
     return pd.Series([inputs, output], index=['inputs', 'output'])
 
 
-def format_for_ML_usage(inputs, outputs, num_input_samples):
+def format_for_ML_usage_tf(inputs, outputs, num_input_samples):
     """
     Given the inputs and outputs for the model, format the data to be used for ML.
     This is accomplished by splitting the data into training/test tensors
@@ -100,6 +101,48 @@ def format_for_ML_usage(inputs, outputs, num_input_samples):
     x_test_tensor = tf.convert_to_tensor(x_test_scaled)
     y_train_tensor = tf.convert_to_tensor(y_train_scaled)
     y_test_tensor = tf.convert_to_tensor(y_test_scaled)
+
+    return (x_train_tensor, x_test_tensor, y_train_tensor, y_test_tensor, scaler)
+
+
+def format_for_ML_usage_torch(inputs, outputs, num_input_samples):
+    """
+    Given the inputs and outputs for the model, format the data to be used for ML with PyTorch.
+    This is accomplished by splitting the data into training/test sets, scaling, and converting to PyTorch tensors.
+    :param inputs: inputs for the model (list of lists)
+    :param outputs: output for the model (list of values)
+    :param num_input_samples: Number of samples in input sequences
+
+    :return: The tensors responsible for testing/training the model and the scaler used to scale the data
+            (x_train_tensor, x_test_tensor, y_train_tensor, y_test_tensor, scaler)
+    """
+
+    # Create a train/test split for the dataset
+    x_train, x_test, y_train, y_test = train_test_split(inputs, outputs, test_size=0.2, shuffle=False)
+
+    # Check for NaN values in x_train
+    for i in range(len(x_train)):
+        if np.isnan(x_train[i]).any():
+            print(f'x_train[{i}] has nan values! Check the data!')
+
+    # Convert to numpy arrays and reshape
+    x_train = np.array(x_train).reshape(-1, num_input_samples)
+    x_test = np.array(x_test).reshape(-1, num_input_samples)
+    y_train = np.array(y_train).reshape(-1, 1)
+    y_test = np.array(y_test).reshape(-1, 1)
+
+    # Standardize/Normalize the dataset
+    scaler = StandardScaler()
+    x_train_scaled = scaler.fit_transform(x_train).reshape(-1, num_input_samples, 1)
+    x_test_scaled = scaler.transform(x_test).reshape(-1, num_input_samples, 1)
+    y_train_scaled = scaler.fit_transform(y_train)
+    y_test_scaled = scaler.transform(y_test)
+
+    # Convert scaled data to PyTorch tensors
+    x_train_tensor = torch.tensor(x_train_scaled, dtype=torch.float32)
+    x_test_tensor = torch.tensor(x_test_scaled, dtype=torch.float32)
+    y_train_tensor = torch.tensor(y_train_scaled, dtype=torch.float32)
+    y_test_tensor = torch.tensor(y_test_scaled, dtype=torch.float32)
 
     return (x_train_tensor, x_test_tensor, y_train_tensor, y_test_tensor, scaler)
 
