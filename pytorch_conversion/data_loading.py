@@ -105,13 +105,14 @@ def format_for_ML_usage_tf(inputs, outputs, num_input_samples):
     return (x_train_tensor, x_test_tensor, y_train_tensor, y_test_tensor, scaler)
 
 
-def format_for_ML_usage_torch(inputs, outputs, num_input_samples):
+def format_for_ML_usage_torch(inputs, outputs, num_input_samples, num_features=9):
     """
     Given the inputs and outputs for the model, format the data to be used for ML with PyTorch.
     This is accomplished by splitting the data into training/test sets, scaling, and converting to PyTorch tensors.
     :param inputs: inputs for the model (list of lists)
     :param outputs: output for the model (list of values)
     :param num_input_samples: Number of samples in input sequences
+    :param num_features: Number of features per input sample
 
     :return: The tensors responsible for testing/training the model and the scaler used to scale the data
             (x_train_tensor, x_test_tensor, y_train_tensor, y_test_tensor, scaler)
@@ -125,16 +126,16 @@ def format_for_ML_usage_torch(inputs, outputs, num_input_samples):
         if np.isnan(x_train[i]).any():
             print(f'x_train[{i}] has nan values! Check the data!')
 
-    # Convert to numpy arrays and reshape
-    x_train = np.array(x_train).reshape(-1, num_input_samples)
-    x_test = np.array(x_test).reshape(-1, num_input_samples)
-    y_train = np.array(y_train).reshape(-1, 1)
+    # Convert to numpy arrays without unnecessary reshaping
+    x_train = np.array(x_train)
+    x_test = np.array(x_test)
+    y_train = np.array(y_train).reshape(-1, 1)  # Only reshape y because we want to scale it as a single column
     y_test = np.array(y_test).reshape(-1, 1)
 
     # Standardize/Normalize the dataset
     scaler = StandardScaler()
-    x_train_scaled = scaler.fit_transform(x_train).reshape(-1, num_input_samples, 1)
-    x_test_scaled = scaler.transform(x_test).reshape(-1, num_input_samples, 1)
+    x_train_scaled = scaler.fit_transform(x_train)
+    x_test_scaled = scaler.transform(x_test)
     y_train_scaled = scaler.fit_transform(y_train)
     y_test_scaled = scaler.transform(y_test)
 
