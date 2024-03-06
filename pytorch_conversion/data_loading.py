@@ -139,19 +139,19 @@ def format_for_ML_usage_torch(inputs, outputs, seq_length=3):
     y_test = np.array(y_test).reshape(-1, 1)
 
     # Standardize/Normalize the dataset
-    scaler = StandardScaler()
-    x_train_scaled = scaler.fit_transform(x_train.reshape(-1, seq_length * x_train.shape[2])).reshape(x_train.shape)
-    x_test_scaled = scaler.transform(x_test.reshape(-1, seq_length * x_test.shape[2])).reshape(x_test.shape)
-    y_train_scaled = scaler.fit_transform(y_train)
-    y_test_scaled = scaler.transform(y_test)
+    # scaler = StandardScaler()
+    # x_train_scaled = scaler.fit_transform(x_train.reshape(-1, seq_length * x_train.shape[2])).reshape(x_train.shape)
+    # x_test_scaled = scaler.transform(x_test.reshape(-1, seq_length * x_test.shape[2])).reshape(x_test.shape)
+    # y_train_scaled = scaler.fit_transform(y_train)
+    # y_test_scaled = scaler.transform(y_test)
 
     # Convert scaled data to PyTorch tensors
-    x_train_tensor = torch.tensor(x_train_scaled, dtype=torch.float32)
-    x_test_tensor = torch.tensor(x_test_scaled, dtype=torch.float32)
-    y_train_tensor = torch.tensor(y_train_scaled, dtype=torch.float32)
-    y_test_tensor = torch.tensor(y_test_scaled, dtype=torch.float32)
+    x_train_tensor = torch.tensor(x_train, dtype=torch.float32)
+    x_test_tensor = torch.tensor(x_test, dtype=torch.float32)
+    y_train_tensor = torch.tensor(y_train, dtype=torch.float32)
+    y_test_tensor = torch.tensor(y_test, dtype=torch.float32)
 
-    return (x_train_tensor, x_test_tensor, y_train_tensor, y_test_tensor, scaler)
+    return (x_train_tensor, x_test_tensor, y_train_tensor, y_test_tensor)
 
 
 
