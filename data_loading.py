@@ -64,7 +64,6 @@ def divide_inputs_and_outputs(row, output_column_name='Price'):
     return pd.Series([inputs, output], index=['inputs', 'output'])
 
 
-
 def format_for_ML_usage_tf(inputs, outputs, num_input_samples):
     """
     Given the inputs and outputs for the model, format the data to be used for ML.
@@ -106,53 +105,46 @@ def format_for_ML_usage_tf(inputs, outputs, num_input_samples):
     return (x_train_tensor, x_test_tensor, y_train_tensor, y_test_tensor, scaler)
 
 
-def format_for_ML_usage_torch(inputs, outputs, seq_length=3):
+def format_for_ML_usage_torch(inputs, outputs, num_input_samples):
     """
     Given the inputs and outputs for the model, format the data to be used for ML with PyTorch.
-    This is accomplished by creating sequences of a specified length, splitting the data into training/test sets,
-    scaling, and converting to PyTorch tensors.
-    
+    This is accomplished by splitting the data into training/test sets, scaling, and converting to PyTorch tensors.
     :param inputs: inputs for the model (list of lists)
-    :param outputs: outputs for the model (list of values)
-    :param seq_length: The length of the input sequences
+    :param outputs: output for the model (list of values)
+    :param num_input_samples: Number of samples in input sequences
 
     :return: The tensors responsible for testing/training the model and the scaler used to scale the data
             (x_train_tensor, x_test_tensor, y_train_tensor, y_test_tensor, scaler)
     """
 
-    sequences = []
-    targets = []
-
-    for i in range(len(inputs) - seq_length):
-        seq = inputs[i:i+seq_length]
-        target = outputs[i+seq_length]  # Assuming outputs are aligned with the inputs
-        sequences.append(seq)
-        targets.append(target)
-
     # Create a train/test split for the dataset
-    x_train, x_test, y_train, y_test = train_test_split(sequences, targets, test_size=0.2, shuffle=False)
+    x_train, x_test, y_train, y_test = train_test_split(inputs, outputs, test_size=0.2, shuffle=False)
 
-    # Convert to numpy arrays
-    x_train = np.array(x_train)
-    x_test = np.array(x_test)
-    y_train = np.array(y_train).reshape(-1, 1)  # Reshape for consistency with scaler
+    # Check for NaN values in x_train
+    for i in range(len(x_train)):
+        if np.isnan(x_train[i]).any():
+            print(f'x_train[{i}] has nan values! Check the data!')
+
+    # Convert to numpy arrays and reshape
+    x_train = np.array(x_train).reshape(-1, num_input_samples)
+    x_test = np.array(x_test).reshape(-1, num_input_samples)
+    y_train = np.array(y_train).reshape(-1, 1)
     y_test = np.array(y_test).reshape(-1, 1)
 
     # Standardize/Normalize the dataset
-    # scaler = StandardScaler()
-    # x_train_scaled = scaler.fit_transform(x_train.reshape(-1, seq_length * x_train.shape[2])).reshape(x_train.shape)
-    # x_test_scaled = scaler.transform(x_test.reshape(-1, seq_length * x_test.shape[2])).reshape(x_test.shape)
-    # y_train_scaled = scaler.fit_transform(y_train)
-    # y_test_scaled = scaler.transform(y_test)
+    scaler = StandardScaler()
+    x_train_scaled = scaler.fit_transform(x_train).reshape(-1, num_input_samples, 1)
+    x_test_scaled = scaler.transform(x_test).reshape(-1, num_input_samples, 1)
+    y_train_scaled = scaler.fit_transform(y_train)
+    y_test_scaled = scaler.transform(y_test)
 
     # Convert scaled data to PyTorch tensors
-    x_train_tensor = torch.tensor(x_train, dtype=torch.float32)
-    x_test_tensor = torch.tensor(x_test, dtype=torch.float32)
-    y_train_tensor = torch.tensor(y_train, dtype=torch.float32)
-    y_test_tensor = torch.tensor(y_test, dtype=torch.float32)
+    x_train_tensor = torch.tensor(x_train_scaled, dtype=torch.float32)
+    x_test_tensor = torch.tensor(x_test_scaled, dtype=torch.float32)
+    y_train_tensor = torch.tensor(y_train_scaled, dtype=torch.float32)
+    y_test_tensor = torch.tensor(y_test_scaled, dtype=torch.float32)
 
-    return (x_train_tensor, x_test_tensor, y_train_tensor, y_test_tensor)
-
+    return (x_train_tensor, x_test_tensor, y_train_tensor, y_test_tensor, scaler)
 
 
 def get_model_data_from_directory(model_data_directory, sample_columns, N_TREND_SAMPLES=3):
@@ -183,33 +175,3 @@ def get_model_data_from_directory(model_data_directory, sample_columns, N_TREND_
         model_data = pd.concat([model_data, data_to_concat], ignore_index=True).drop(columns=['Unnamed: 0'])
 
     return model_data
-
-
-def get_data_from_dir(model_data_directory, sample_columns):
-    model_data = pd.DataFrame(columns = sample_columns)
-    for file in os.listdir(model_data_directory):
-        data_to_concat = pd.read_csv(os.path.join(model_data_directory, file))
-        
-        # Sort model data where the earliest date comes first and the latest data comes last
-        data_to_concat['Date'] = pd.to_datetime(data_to_concat['Date'])
-        data_to_concat = data_to_concat.sort_values(by='Date')
-
-        # The 'Sentiment' column contains some nan values when articles weren't published. Replace these with 0
-        data_to_concat['Sentiment'] = data_to_concat['Sentiment'].fillna(0)
-
-        model_data = pd.concat([model_data, data_to_concat], ignore_index=True).drop(columns=['Unnamed: 0'])
-
-    return model_data
-
-
-def div_inputs_and_outputs(row, output_column_name='Price'):
-    """
-    Create a column to specifically be input into an ML model and a column for output
-    :param pd.DataFrame row: row to divide
-
-    :return: row with input and output columns
-    """
-    output = row[output_column_name]
-    inputs = row[2:-1].tolist()
-
-    return pd.Series([inputs, output], index=['inputs', 'output'])
