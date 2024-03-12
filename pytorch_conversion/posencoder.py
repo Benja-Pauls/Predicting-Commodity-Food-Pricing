@@ -22,5 +22,4 @@ class PositionalEncoding(nn.Module):
         pe = pe.squeeze(1)  # Remove the singleton dimension
         # Ensure pe is expanded to match the batch size of x
         pe = pe.unsqueeze(0).repeat(x.size(0), 1, 1)  # Shape: [batch_size, seq_len, d_model]
-        # The add operation below should now be valid
-        return x + pe
+        # The add operation below should now be vali

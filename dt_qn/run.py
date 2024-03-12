@@ -511,23 +511,4 @@ def run_experiment(args):
         args.envs,
         args.num_steps,
         eps,
-        args.eval_frequency,
-        args.eval_episodes,
-        policy_path,
-        args.save_policy,
-        logger,
-        mean_success_rate,
-        mean_reward,
-        mean_episode_length,
-        time_remaining,
-        args.verbose,
-    )
-
-    # Save a small checkpoint if we finish training to let following runs know we are finished
-    agent.save_mini_checkpoint(
-        checkpoint_dir=policy_path, wandb_id=wandb.run.id if logger == wandb else None
-    )
-
-
-if __name__ == "__main__":
-    run_experiment(get_args())
+        args.eval

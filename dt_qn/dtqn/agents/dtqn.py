@@ -257,13 +257,4 @@ class DtqnAgent(DqnAgent):
         norm = torch.nn.utils.clip_grad_norm_(
             self.policy_network.parameters(),
             self.grad_norm_clip,
-            error_if_nonfinite=True,
-        )
-        # Logging
-        self.grad_norms.add(norm.item())
-
-        self.optimizer.step()
-        self.num_train_steps += 1
-
-        if self.num_train_steps % self.target_update_frequency == 0:
-            self.target_update()
+            err
