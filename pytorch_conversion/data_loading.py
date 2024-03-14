@@ -47,7 +47,23 @@ def months_ahead_output(model_data, months_ahead, output_column_name='Price'):
     return model_data
 
 
-def divide_inputs_and_outputs(row, output_column_name='Price'):
+# def divide_inputs_and_outputs(row, output_column_name='Price'):
+#     """
+#     Create a column to specifically be input into an ML model and a column for output
+#     :param pd.DataFrame row: row to divide
+
+#     :return: row with input and output columns
+#     """
+#     output = row[output_column_name]
+#     inputs = row[2:-1].tolist()
+
+#     # For each element in n_previous_price, add it to the inputs
+#     for price in row['n_previous_prices']:
+#         inputs.append(price)
+
+#     return pd.Series([inputs, output], index=['inputs', 'output'])
+
+def div_inputs_and_outputs(row, output_column_name='Price'):
     """
     Create a column to specifically be input into an ML model and a column for output
     :param pd.DataFrame row: row to divide
@@ -55,11 +71,11 @@ def divide_inputs_and_outputs(row, output_column_name='Price'):
     :return: row with input and output columns
     """
     output = row[output_column_name]
-    inputs = row[2:-1].tolist()
 
-    # For each element in n_previous_price, add it to the inputs
-    for price in row['n_previous_prices']:
-        inputs.append(price)
+    # Grab the inputs from column 3 to the final column
+    inputs = row[2:]
+    print("GRABBED INPUT COLUMNS: ", inputs, "\n\n")
+    inputs = inputs.tolist()
 
     return pd.Series([inputs, output], index=['inputs', 'output'])
 
@@ -202,14 +218,3 @@ def get_data_from_dir(model_data_directory, sample_columns):
     return model_data
 
 
-def div_inputs_and_outputs(row, output_column_name='Price'):
-    """
-    Create a column to specifically be input into an ML model and a column for output
-    :param pd.DataFrame row: row to divide
-
-    :return: row with input and output columns
-    """
-    output = row[output_column_name]
-    inputs = row[2:-1].tolist()
-
-    return pd.Series([inputs, output], index=['inputs', 'output'])
