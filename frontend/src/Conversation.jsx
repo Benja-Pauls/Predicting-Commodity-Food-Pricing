@@ -19,7 +19,7 @@ const Conversation = (props) => {
     }
 
     return (
-        <div>
+        <div className="chat-messages">
             {msgBubbles}
         </div>
     )
