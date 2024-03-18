@@ -32,3 +32,5 @@ const MessageBox = (props) => {
         </div>
     )
 }
+
+export default MessageBox

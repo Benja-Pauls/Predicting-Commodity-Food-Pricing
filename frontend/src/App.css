@@ -26,13 +26,28 @@ html, body {
 }
 
 .chat-header {
-  background-color: #439335;
+  background-color: #009FDC;
   border: 3px solid #181818;
   color: white;
   padding: 20px; /* Taller header */
   display: flex;
   align-items: center; /* Center items vertically */
   border-radius: 20px;
+  margin: 10px;
+  position: relative;
+  width: 100%-10px;
+  height: 100%-10px;
+}
+
+.powered-by {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  text-align: center;
+  padding: 10px; /* Optional: Add padding */
+}
+
+.dropdown {
   margin: 10px;
 }
 
