@@ -42,7 +42,7 @@ const Header = (props) => {
                 </button>
                 <ul className="dropdown-menu">
                     {countries.map(country => (
-                        <li><a className="dropdown-item" href="#">{country.name}</a></li>
+                        <li><a id = {country.name} className="dropdown-item" href="#" onClick = {onCountryChanged}>{country.name}</a></li>
                     ))}
                 </ul>
                 <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +50,7 @@ const Header = (props) => {
                 </button>
                 <ul className="dropdown-menu">
                     {languages.map(language => (
-                        <li><a className="dropdown-item" href="#">{language.name}</a></li>
+                        <li><a id = {language.name} className="dropdown-item" href="#" onClick = {onLanguageChanged}>{language.name}</a></li>
                     ))}
                 </ul>
             </div>

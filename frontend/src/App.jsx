@@ -100,7 +100,7 @@ const App = (props) => {
           <button onClick={sendMessage}>Send</button>
         </div>
       </div> */}
-      <Header country={country} onCountrySelectChanged={onCountrySelectChanged} language={language}/>
+      <Header country={country} onLanguageSelectChanged = {onLanguageSelectChanged} onCountrySelectChanged={onCountrySelectChanged} language={language}/>
       <Conversation messages = {messages}/>
       <MessageBox message = {"Hello"} user = {"person"}/>
     </div>
