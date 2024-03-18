@@ -39,6 +39,10 @@ html, body {
   height: 100%-10px;
 }
 
+.btn-secondary {
+  margin: 10px;
+}
+
 .powered-by {
   position: absolute;
   bottom: 10px; /* Adjust as needed */
