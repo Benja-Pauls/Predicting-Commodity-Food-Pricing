@@ -1,0 +1,147 @@
+html, body {
+  height: 100%;
+  margin: 0; /* Removes the default margin */
+  background-color: #181818;
+}
+
+#root, .App {
+  height: 100%;
+  background-color: #181818;
+  align-content: center;
+}
+
+.chat-container {
+  width: 80%;
+  background-color: #404040; /* Background color is gray */
+  border: 3px solid #b3b3b3;
+  display: flex;
+  flex-direction: column;
+  height: 90%; /* This will make it cover the full viewport height */
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.chat-header {
+  background-color: #439335;
+  border: 3px solid #181818;
+  color: white;
+  padding: 20px; /* Taller header */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  overflow-y: auto;
+  padding: 20px;
+  flex-grow: 1;
+
+  /* flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  padding: 20px;
+  overflow-y: auto; */
+}
+
+.chat-input {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #228855;
+  color: white;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: rgb(26, 188, 37);
+}
+
+.chat-bubble {
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.user {
+  background-color: #A0D5B0;
+  color: #000000 !important;
+  float: right;
+  align-self: flex-end;
+}
+
+.bot {
+  background-color: #D7F5E0;
+  color: #000000 !important;
+  float: left;
+  align-self: flex-start;
+}
+
+.input-container {
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.input-container input {
+  flex: 1;
+  margin-bottom: 5px;
+  border: 3px solid #181818;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  background-color: #B3b3b3;
+}
+
+.input-container button {
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  background-color: #016f09;
+  border: 3px solid #181818;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Send Button Hover Effect */
+.input-container button:hover {
+  background-color: #75f35f;
+}
+
+.header-image {
+  width: 12vh; /* Adjust the width as needed */
+  height: 12vh; /* Adjust the height as needed */
+  margin-right: 10px;
+}
+
+.header-text {
+  flex-grow: 1; /* Allow the text to grow and fill the remaining space */
+}
