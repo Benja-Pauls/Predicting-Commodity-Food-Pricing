@@ -15,7 +15,7 @@ const Conversation = (props) => {
 
     console.log(previousMessages.length);
     for(let i = 0; i < previousMessages.length; i++){
-        msgBubbles.push(<MessageBox message = {previousMessages[i].text} user = {previousMessages[i].sender}/>); //May need to add a .something after list index if using JSON
+        msgBubbles.push(<MessageBox message = {previousMessages[i].text} user = {previousMessages[i].sender} key={previousMessages[i].text}/>); //May need to add a .something after list index if using JSON
     }
 
     return (

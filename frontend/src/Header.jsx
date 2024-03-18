@@ -13,17 +13,19 @@ const Header = (props) => {
     };
 
     const countries = [
-        {name: "Afghanistan" },
-        {name: "Another one" },
-        {name: "sup" },
+        {name: "Argentina" },
+        {name: "Australia" },
+        {name: "Canada" },
+        {name: "Russia" },
+        {name: "Ukraine" },
+        {name: "United States" }
         // Add more countries as needed
     ];
 
     const languages = [
-        {name: "languages" },
-        {name: "Another one" },
-        {name: "sup" },
-        // Add more countries as needed
+        {name: "English" },
+        {name: "Spanish" }
+        // Add more languages as needed
     ];
 
     return (
@@ -36,22 +38,21 @@ const Header = (props) => {
                 </div>
             </div>
             <div>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div className="dropdown">
+                    <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" onClick={console.log('test')}>
                         Country | {props.country}
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul className="dropdown-menu">
                         {countries.map(country => (
-                            <li><a className="dropdown-item" href="#">{country.name}</a></li>
+                            <li key={country.name}><a className="dropdown-item" href="#">{country.name}</a></li>
                         ))}
                     </ul>
-                    <text id="its genius hush">   </text>
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Language | {props.language}
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul className="dropdown-menu">
                         {languages.map(language => (
-                            <li><a className="dropdown-item" href="#">{language.name}</a></li>
+                            <li key={language.name}><a className="dropdown-item" href="#">{language.name}</a></li>
                         ))}
                     </ul>
                 </div>
