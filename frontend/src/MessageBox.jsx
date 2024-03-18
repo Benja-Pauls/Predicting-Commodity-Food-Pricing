@@ -9,10 +9,10 @@ const MessageBox = (props) => {
 
     if(props.user === "person"){
         user = "User";
-        img = ""; //Insert image path here
+        img = "frontend/public/FAO_logo_white.png"; //Insert image path here
     } else {
         user = "NourishNet"
-        img = ""; //Interset image path here
+        img = "frontend/public/FAO_logo.png"; //Interset image path here
     }
 
     return (

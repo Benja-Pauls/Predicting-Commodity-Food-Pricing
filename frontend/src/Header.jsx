@@ -1,5 +1,4 @@
 import './App.css'; // Import your CSS file for styling
-import 'bootstrap/dist/css/bootstrap.css'
 
 const Header = (props) => {
 

@@ -1,28 +1,38 @@
 //Future App goes here
 import React, { useState } from 'react';
-import './App.css'; // Import your CSS file for styling
+import './App.css'; // Import for CSS styling
 import AnimatedTextDisplay from './AnimatedText.js';
 import Header from "./Header";
+import Conversation from "./Conversation.jsx"
 import MessageBox from "./MessageBox.jsx"
 
 
-function Chatbot() {
+
+const App = (props) => {
+
   const [country, setCountry] = useState("United States");
   const [language, setLanguage] = useState("English");
 
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(
+  [{
+    text: "Hello",
+    sender: "person"
+  },
+  {
+    text: "World",
+    sender: "bot"
+  }]);
   const [input, setInput] = useState('');
 
   const [index, setIndex] = useState(0);
 
   const sendMessage = async () => {
-    if (!input.trim()) return; // Avoid sending empty messages
+    if (!input.trim()){
+      return; // Avoid sending empty messages
+    }
 
     // Add the user's input to messages for immediate UI update
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { text: input, sender: 'user' },
-    ]);
+    setMessages((messages) => [...messages, { text: input, sender: 'user' },]);
 
     try {
       const response = await fetch('http://localhost:5001/api/send-message', {
@@ -48,17 +58,11 @@ function Chatbot() {
       // If the bot searched for data, add 'Searching for <data>' to messages
       if (data.data_searched) {
         data_searched_message = "Searching for " + data.data_searched + "...";
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          { text: data_searched_message, sender: 'bot' },
-        ]);
+        setMessages((messages) => [...messages, { text: data_searched_message, sender: 'bot' },]);
       }
     
       // Add the bot's response to messages
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { text: data.reply, sender: 'bot' },
-      ]);
+      setMessages((messages) => [...messages, { text: data.reply, sender: 'bot' }, ]);
     } catch (error) {
       console.error('There was a problem sending/receiving the message:', error);
     }
@@ -97,7 +101,8 @@ function Chatbot() {
         </div>
       </div> */}
       <Header country={country} onCountrySelectChanged={onCountrySelectChanged} language={language}/>
-      <MessageBox user="person" message="text"/>
+      <Conversation messages = {messages}/>
+      <MessageBox message = {"Hello"} user = {"person"}/>
     </div>
   );
 
@@ -105,4 +110,4 @@ function Chatbot() {
 
 
 
-export default Chatbot;
+export default App;
