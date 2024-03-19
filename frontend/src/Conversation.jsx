@@ -15,7 +15,12 @@ const Conversation = (props) => {
 
     console.log(previousMessages.length);
     for(let i = 0; i < previousMessages.length; i++){
-        msgBubbles.push(<MessageBox message = {previousMessages[i].text} user = {previousMessages[i].sender} key={previousMessages[i].text}/>); //May need to add a .something after list index if using JSON
+        //If its the same user saying two messages, we don't want the name and image to display
+        var same_user = 0;
+        if (i != 0 && previousMessages[i-1].sender==previousMessages[i].sender) {
+            same_user = 1;
+        }
+        msgBubbles.push(<MessageBox message={previousMessages[i].text} user={previousMessages[i].sender} key={previousMessages[i].text} same_user={same_user}/>); //May need to add a .something after list index if using JSON
     }
 
     return (

@@ -22,6 +22,10 @@ const App = (props) => {
     sender: "bot"
   },
   {
+    text: "I sent another message",
+    sender: "bot"
+  },
+  {
     text: "Hello",
     sender: "person"
   },

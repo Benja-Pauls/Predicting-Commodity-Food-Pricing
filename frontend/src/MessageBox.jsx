@@ -9,25 +9,43 @@ const MessageBox = (props) => {
     let msgClassName;
 
     if(props.user === "person"){
-        user = "User";
-        img = './FAO_logo_white.png'; //Insert image path here
-        msgClassName = "msg sent";
-        return (
-            <span>
-                <div data-time={user} className={msgClassName}>{message}</div>
-                <img className="profileImageSent" src = {img} alt="pofile" style={{ width: "45px", height: "100%" }}/>
-            </span>
-        )
+        if (props.same_user == 1) {
+            msgClassName = "msg sent";
+            return (
+                <span>
+                    <div className={msgClassName} style={{marginRight: '55px'}}>{message}</div>
+                </span>
+            )
+        } else {
+            user = "User";
+            img = './FAO_logo_white.png'; //Insert image path here
+            msgClassName = "msg sent";
+            return (
+                <span>
+                    <div data-time={user} className={msgClassName}>{message}</div>
+                    <img className="profileImageSent" src = {img} alt="pofile" style={{ width: "45px", height: "100%" }}/>
+                </span>
+            )
+        }
     } else {
-        user = "NourishNet"
-        img = './FAO_logo.png'; //Interset image path here
-        msgClassName = "msg rcvd"
-        return (
-            <span>
-                <img className="profileImageRcvd" src = {img} alt="pofile" style={{ width: "45px", height: "100%" }}/>
-                <div data-time={user} className={msgClassName}>{message}</div>
-            </span>
-        )
+        if (props.same_user == 1) {
+            msgClassName = "msg rcvd";
+            return (
+                <span>
+                    <div className={msgClassName} style={{marginLeft: '55px'}}>{message}</div>
+                </span>
+            )
+        } else {
+            user = "NourishNet"
+            img = './FAO_logo.png'; //Interset image path here
+            msgClassName = "msg rcvd"
+            return (
+                <span>
+                    <img className="profileImageRcvd" src = {img} alt="pofile" style={{ width: "45px", height: "100%" }}/>
+                    <div data-time={user} className={msgClassName}>{message}</div>
+                </span>
+            )
+        }
     }
 
     
