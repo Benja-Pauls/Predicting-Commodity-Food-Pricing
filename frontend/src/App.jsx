@@ -5,6 +5,7 @@ import AnimatedTextDisplay from './AnimatedText.js';
 import Header from "./Header";
 import Conversation from "./Conversation.jsx"
 import MessageBox from "./MessageBox.jsx"
+import Footer from "./Footer.jsx"
 
 
 
@@ -15,6 +16,14 @@ const App = (props) => {
 
   const [messages, setMessages] = useState(
   [{
+    text: "Hello",
+    sender: "person"
+  },
+  {
+    text: "This is a test for a long sentence",
+    sender: "bot"
+  },
+  {
     text: "Hello",
     sender: "person"
   },
@@ -79,7 +88,7 @@ const App = (props) => {
   }
   
   return (
-    <div>
+    <div className = "App">
       {/* <div className="chat-container">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></link>
         <div className="chat-header">
@@ -102,6 +111,7 @@ const App = (props) => {
       </div> */}
       <Header country={country} onLanguageSelectChanged = {onLanguageSelectChanged} onCountrySelectChanged={onCountrySelectChanged} language={language}/>
       <Conversation messages = {messages}/>
+      <Footer setMessages = {setMessages}/>
     </div>
   );
 
