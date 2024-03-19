@@ -109,13 +109,13 @@ span{
   margin-right: auto;
 }
 
-.profileImageRcvd {
+/* .profileImageRcvd {
   margin-right: 10px;
 }
 
 .profileImageSent {
   margin-left: 10px;
-}
+} */
 
 /* Improve radius for messages group */
 
@@ -139,7 +139,7 @@ span{
   color: #b4b4b4;
   white-space: nowrap;
   /* Hidden by default */
-  
+  display: none;
 }
 
 .msg.sent::before {
@@ -153,8 +153,14 @@ span{
 
 /* Show time only for first message in group */
 
-.msg:first-child::before,
-.msg.sent+.msg.rcvd::before,
+.msg:first-child::before{
+  /* Show only for first message in group */
+  display: block;
+}
+.msg.sent+.msg.rcvd::before{
+  /* Show only for first message in group */
+  display: block;
+}
 .msg.rcvd+.msg.sent::before {
   /* Show only for first message in group */
   display: block;

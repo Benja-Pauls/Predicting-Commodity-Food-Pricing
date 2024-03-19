@@ -7,8 +7,6 @@ import Conversation from "./Conversation.jsx"
 import MessageBox from "./MessageBox.jsx"
 import Footer from "./Footer.jsx"
 
-
-
 const App = (props) => {
 
   const [country, setCountry] = useState("United States");
@@ -41,7 +39,7 @@ const App = (props) => {
     }
 
     // Add the user's input to messages for immediate UI update
-    setMessages((messages) => [...messages, { text: input, sender: 'user' },]);
+    setMessages((messages) => [...messages, { text: input, sender: 'person' },]);
 
     try {
       const response = await fetch('http://localhost:5001/api/send-message', {
@@ -111,12 +109,11 @@ const App = (props) => {
       </div> */}
       <Header country={country} onLanguageSelectChanged = {onLanguageSelectChanged} onCountrySelectChanged={onCountrySelectChanged} language={language}/>
       <Conversation messages = {messages}/>
-      <Footer setMessages = {setMessages}/>
+      <Footer sendMessage = {sendMessage} newInput = {setInput}/>
     </div>
   );
 
 }
-
 
 
 export default App;
