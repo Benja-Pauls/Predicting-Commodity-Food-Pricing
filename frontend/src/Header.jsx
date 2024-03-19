@@ -36,7 +36,7 @@ const Header = (props) => {
                 </div>
             </div>
             <div className="btn-group">
-                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
                     Country | {props.country}
                 </button>
                 <ul className="dropdown-menu">
@@ -44,7 +44,9 @@ const Header = (props) => {
                         <li><a id = {country.name} className="dropdown-item" href="#" onClick = {onCountryChanged}>{country.name}</a></li>
                     ))}
                 </ul>
-                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            </div>
+            <div className="btn-group">
+                <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
                     Language | {props.language}
                 </button>
                 <ul className="dropdown-menu">
