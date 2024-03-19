@@ -19,7 +19,7 @@ const App = (props) => {
     sender: "person"
   },
   {
-    text: "World",
+    text: "This is a test for a long sentence",
     sender: "bot"
   }]);
   const [input, setInput] = useState('');
@@ -102,7 +102,6 @@ const App = (props) => {
       </div> */}
       <Header country={country} onLanguageSelectChanged = {onLanguageSelectChanged} onCountrySelectChanged={onCountrySelectChanged} language={language}/>
       <Conversation messages = {messages}/>
-      <MessageBox message = {"Hello"} user = {"person"}/>
     </div>
   );
 

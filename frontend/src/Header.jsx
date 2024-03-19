@@ -1,5 +1,4 @@
 import './App.css'; // Import your CSS file for styling
-import Dropdown from "react-bootstrap/Dropdown"
 
 const Header = (props) => {
 
@@ -29,8 +28,8 @@ const Header = (props) => {
 
     return (
         <>
-            <div className="chat-header">
-                <img src='FAO_logo_white.png' alt=" Next Step Logo" className="header-image" />
+            <div className="chat-header ">
+                <img src='FAO_logo_white.png' alt="FAO Step Logo" className="header-image" />
                 <h1>Food and Agriculture<br></br>Organization of the United Nations</h1>
                 <div className='powered-by'>
                     <h5>Powered by GIEWS</h5>
