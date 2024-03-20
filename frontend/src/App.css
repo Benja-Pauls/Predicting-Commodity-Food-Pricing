@@ -7,7 +7,7 @@ html, body {
 #root, .App {
   height: 100%;
   background-color: #181818;
-  align-content: center;
+  padding-bottom: 10px;
 }
 
 .chat-header {
@@ -167,10 +167,9 @@ span{
 }
 
 .chat-input {
-  display: flex;
   margin: auto;
   max-width: 80%;
-  border-radius: 4px;
+  border-radius: 6px;
   font-family: "Roboto Condensed";
   font-optical-sizing: auto;
   font-weight: 500;

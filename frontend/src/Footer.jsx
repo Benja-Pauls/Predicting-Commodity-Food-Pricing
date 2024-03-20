@@ -20,15 +20,17 @@ const Footer = (props) => {
     }
 
     return (
-        <div className="input-group chat-input">
-            <input value = {input} onChange={(event) => setInput(event.target.value)} onKeyDown={wasEnterPushed} className="form-control" placeholder="Ask Any Question..." aria-label="With textarea"></input>
-            <span id = "abc" className="input-group-text">
-                <button onClick={send} className="btn btn-outline-secondary" type="button" id="button-addon2">
-                    <span id="sendIcon">
-                        <i className="bi bi-send-fill"></i>
-                    </span>
-                </button>
-            </span>
+        <div classname = "paddingDiv">
+            <div className="input-group chat-input">
+                <input value = {input} onChange={(event) => setInput(event.target.value)} onKeyDown={wasEnterPushed} className="form-control" placeholder="Ask Any Question..." aria-label="With textarea"></input>
+                <span id = "abc" className="input-group-text">
+                    <button onClick={send} className="btn btn-outline-secondary" type="button" id="button-addon2">
+                        <span id="sendIcon">
+                            <i className="bi bi-send-fill"></i>
+                        </span>
+                    </button>
+                </span>
+            </div>
         </div>
     )
 }

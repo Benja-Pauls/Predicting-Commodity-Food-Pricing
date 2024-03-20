@@ -37,7 +37,7 @@ const App = (props) => {
   const [index, setIndex] = useState(0);
 
   const sendMessage = async (input) => {
-    console.log(input);
+    //console.log(input);
     if (!input.trim()){
       return; // Avoid sending empty messages
     }
@@ -111,7 +111,7 @@ const App = (props) => {
       </div> */}
       <Header country={country} onLanguageSelectChanged = {onLanguageSelectChanged} onCountrySelectChanged={onCountrySelectChanged} language={language}/>
       <Conversation messages = {messages}/>
-      <Footer sendMessage = {sendMessage} />
+      <Footer sendMessage = {sendMessage}/>
     </div>
   );
 
