@@ -115,8 +115,10 @@ const App = (props) => {
       </header>
       <content>
         <Conversation messages = {messages}/>
-        <Footer sendMessage = {sendMessage}/> 
       </content>
+      <footer>
+        <Footer sendMessage = {sendMessage}/> 
+      </footer>
     </div>
   );
 
