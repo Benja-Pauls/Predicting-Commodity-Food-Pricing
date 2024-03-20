@@ -13,17 +13,26 @@ const Header = (props) => {
     };
 
     const countries = [
-        {name: "Afghanistan" },
-        {name: "Another one" },
-        {name: "sup" },
+        {name: "Argentina" },
+        {name: "Australia" },
+        {name: "Brazil" },
+        {name: "Canada" },
+        {name: "India" },
+        {name: "Pakistan" },
+        {name: "Russian Federation" },
+        {name: "Thailand" },
+        {name: "Ukraine" },
+        {name: "United Kingdom" },
+        {name: "United States" },
+        {name: "Uruguay" },
+        {name: "Vietnam" },
         // Add more countries as needed
     ];
 
     const languages = [
-        {name: "languages" },
-        {name: "Another one" },
-        {name: "sup" },
-        // Add more countries as needed
+        {name: "English" },
+        {name: "Spanish" }
+        // Add more languages as needed
     ];
 
     return (

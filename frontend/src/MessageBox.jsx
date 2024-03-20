@@ -9,7 +9,7 @@ const MessageBox = (props) => {
     let msgClassName;
 
     if(props.user === "person"){
-        if (props.same_user == 1) {
+        if (props.same_user) {
             msgClassName = "msg sent";
             return (
                 <span>
@@ -28,7 +28,7 @@ const MessageBox = (props) => {
             )
         }
     } else {
-        if (props.same_user == 1) {
+        if (props.same_user) {
             msgClassName = "msg rcvd";
             return (
                 <span>
