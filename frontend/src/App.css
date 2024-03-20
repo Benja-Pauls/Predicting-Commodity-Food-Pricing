@@ -1,22 +1,18 @@
-html, body {
-  height: 100%;
-  margin: 0; /* Removes the default margin */
-  background-color: #181818;
+#root{
+  position: sticky;
 }
 
-#root, .App {
-  height: 100%;
+.App {
   background-color: #181818;
   padding-bottom: 10px;
-}
-
-main {
-  padding: 0;
+  height: flex;
+  min-height: 100vh;
 }
 
 header {
   position: sticky;
   top:0;
+  width:100%;
   padding:10px;
   padding-bottom:2px;
   background-color: #181818;
@@ -29,7 +25,6 @@ content {
 }
 
 footer {
-  position: absolute; 
   bottom: 0; 
   z-index: 10001;
   margin-bottom:10px;

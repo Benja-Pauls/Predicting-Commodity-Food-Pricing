@@ -20,10 +20,6 @@ const App = (props) => {
     }
   };
 
-  // scrollToBottom = () => {
-  //   this.messagesEnd.current?.scrollIntoView({ behavior: "smooth"});
-  // };
-
   const [messages, setMessages] = useState(
   [{
     text: "Hello",
@@ -103,36 +99,17 @@ const App = (props) => {
   
   return (
     <div className = "App">
-      {/* <div className="chat-container">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></link>
-        <div className="chat-header">
-          <img src='logo.png' alt=" Next Step Logo" className="header-image" />
-        </div>
-        <div className="chat-messages">
-          {messages.map((msg, index) => (
-            <div className={`chat-bubble ${msg.sender === 'user' ? 'user' : 'bot'}`}>
-              <AnimatedTextDisplay text = {msg.text} sender = {msg.sender} />
-            </div>
-          ))}
-        </div>
-        <div className="input-container">
-          <input 
-            id = 'textInput' 
-            onKeyDown={(event) => { if(event.code === 'Enter'){sendMessage();}}} //When enter is pressed the message
-            value={input} onChange={(e) => setInput(e.target.value)} type="text"/>
-          <button onClick={sendMessage}>Send</button>
-        </div>
-      </div> */}
-
       <header>
         <Header country={country} onLanguageSelectChanged = {onLanguageSelectChanged} onCountrySelectChanged={onCountrySelectChanged} language={language}/>
       </header>
       <content id="content">
         <Conversation messages = {messages}/>
-        <div style={{ float:"left", clear:"both"}} ref={messagesEndRef}></div>
       </content>
       <footer>
-        <Footer sendMessage = {sendMessage}/> 
+        <Footer sendMessage = {sendMessage}/>
+        <div style={{height:"100px"}}></div>
+        <div ref={messagesEndRef}>
+        </div> 
       </footer>
     </div>
   );
