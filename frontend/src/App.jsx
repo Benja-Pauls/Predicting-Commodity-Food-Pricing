@@ -33,11 +33,11 @@ const App = (props) => {
     text: "This is a test for a long sentence",
     sender: "bot"
   }]);
-  const [input, setInput] = useState('');
 
   const [index, setIndex] = useState(0);
 
-  const sendMessage = async () => {
+  const sendMessage = async (input) => {
+    console.log(input);
     if (!input.trim()){
       return; // Avoid sending empty messages
     }
@@ -77,8 +77,6 @@ const App = (props) => {
     } catch (error) {
       console.error('There was a problem sending/receiving the message:', error);
     }
-
-    setInput(''); // Clear the input field
   };
 
   const onCountrySelectChanged = (country) => {
@@ -117,7 +115,7 @@ const App = (props) => {
       </header>
       <content>
         <Conversation messages = {messages}/>
-        <Footer sendMessage = {sendMessage} newInput = {setInput}/> 
+        <Footer sendMessage = {sendMessage}/> 
       </content>
     </div>
   );
