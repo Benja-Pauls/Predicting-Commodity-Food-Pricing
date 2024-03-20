@@ -16,7 +16,7 @@ const App = (props) => {
 
   const scrollToBottom = () => {
     if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+      messagesEndRef.current.scrollIntoView({ behavior: "instant" });
     }
   };
 
@@ -107,7 +107,7 @@ const App = (props) => {
       </content>
       <footer>
         <Footer sendMessage = {sendMessage}/>
-        <div style={{height:"100px"}}></div>
+        <div style={{height:"50px"}}></div>
         <div ref={messagesEndRef}>
         </div> 
       </footer>
