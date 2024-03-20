@@ -204,10 +204,6 @@ span{
   cursor: pointer;
 }
 
-.chat-input button:hover {
-  background-color: rgb(26, 188, 37);
-}
-
 .chat-bubble {
   padding: 10px;
   border-radius: 4px;
@@ -224,31 +220,13 @@ span{
   gap: 10px;
 }
 
-.input-container input {
-  flex: 1;
-  margin-bottom: 5px;
-  border: 3px solid #181818;
-  border-radius: 10px;
-  font-size: 16px;
-  outline: none;
-  background-color: #B3b3b3;
-}
-
-.input-container button {
-  padding: 10px 15px;
-  margin-bottom: 5px;
-  background-color: #016f09;
-  border: 3px solid #181818;
-  color: #fff;
-  border-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  outline: none;
-}
-
 /* Send Button Hover Effect */
-.input-container button:hover {
-  background-color: #75f35f;
+.chat-input button:hover {
+  background-color: #3581c0;
+}
+
+.chat-input button:active {
+  background-color: #0064b5;
 }
 
 .header-text {

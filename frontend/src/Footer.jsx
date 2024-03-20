@@ -14,13 +14,14 @@ const Footer = (props) => {
     } 
 
     const send = () => {
-        props.newInput(input);
-        props.sendMessage();
+        //console.log("Input: " + input);
+        props.sendMessage(input);
+        setInput('');
     }
 
     return (
         <div className="input-group chat-input">
-            <input onChange={(event) => setInput(event.target.value)} onKeyDown={wasEnterPushed} className="form-control" placeholder="Ask Any Question..." aria-label="With textarea"></input>
+            <input value = {input} onChange={(event) => setInput(event.target.value)} onKeyDown={wasEnterPushed} className="form-control" placeholder="Ask Any Question..." aria-label="With textarea"></input>
             <span id = "abc" className="input-group-text">
                 <button onClick={send} className="btn btn-outline-secondary" type="button" id="button-addon2">
                     <span id="sendIcon">
