@@ -10,6 +10,20 @@ html, body {
   align-content: center;
 }
 
+
+
+main {
+  padding: 0;
+}
+header {
+  position: sticky;
+  top:0;
+  padding:10px;
+  padding-bottom:2px;
+  background-color: #181818;
+  z-index: 10000;
+}
+
 .chat-header {
   background-color: #009FDC;
   box-shadow:  
