@@ -12,6 +12,18 @@ const App = (props) => {
   const [country, setCountry] = useState("United States");
   const [language, setLanguage] = useState("English");
 
+  const messagesEndRef = React.useRef(null); // Ref for scrolling to bottom
+
+  const scrollToBottom = () => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // scrollToBottom = () => {
+  //   this.messagesEnd.current?.scrollIntoView({ behavior: "smooth"});
+  // };
+
   const [messages, setMessages] = useState(
   [{
     text: "Hello",
@@ -44,6 +56,8 @@ const App = (props) => {
 
     // Add the user's input to messages for immediate UI update
     setMessages((messages) => [...messages, { text: input, sender: 'person' },]);
+
+    scrollToBottom();
 
     try {
       const response = await fetch('http://localhost:5001/api/send-message', {
@@ -81,11 +95,11 @@ const App = (props) => {
 
   const onCountrySelectChanged = (country) => {
     setCountry(country);
-  }
+  };
 
   const onLanguageSelectChanged = (language) => {
     setLanguage(language);
-  }
+  };
   
   return (
     <div className = "App">
@@ -113,8 +127,9 @@ const App = (props) => {
       <header>
         <Header country={country} onLanguageSelectChanged = {onLanguageSelectChanged} onCountrySelectChanged={onCountrySelectChanged} language={language}/>
       </header>
-      <content>
+      <content id="content">
         <Conversation messages = {messages}/>
+        <div style={{ float:"left", clear:"both"}} ref={messagesEndRef}></div>
       </content>
       <footer>
         <Footer sendMessage = {sendMessage}/> 

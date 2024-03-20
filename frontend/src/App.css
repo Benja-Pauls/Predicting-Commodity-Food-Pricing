@@ -23,12 +23,18 @@ header {
   z-index: 10000;
 }
 
+content {
+  max-height:300;
+  overflow-y: hidden;
+}
+
 footer {
   position: absolute; 
   bottom: 0; 
   z-index: 10001;
   margin-bottom:10px;
   width:100%;
+  background-color: #181818;
 }
 
 .chat-header {
@@ -83,7 +89,6 @@ footer {
   --rad: 20px;
   --rad-sm: 3px;
   font: 16px/1.5 sans-serif;
-  display: flex;
   flex-direction: column;
   padding: 20px;
   max-width: 80%;
