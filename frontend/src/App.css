@@ -1,0 +1,254 @@
+#root{
+  position: sticky;
+}
+
+.App {
+  background-color: #181818;
+  padding-bottom: 10px;
+  height: flex;
+  min-height: 100vh;
+}
+
+header {
+  position: sticky;
+  top:0;
+  width:100%;
+  padding:10px;
+  padding-bottom:2px;
+  background-color: #181818;
+  z-index: 10000;
+}
+
+content {
+  max-height:300;
+  overflow-y: hidden;
+}
+
+footer {
+  bottom: 0; 
+  z-index: 10001;
+  margin-bottom:10px;
+  width:100%;
+  background-color: #181818;
+}
+
+.chat-header {
+  background-color: #009FDC;
+  box-shadow:  
+        1px 3px #007ba581,
+        2px 4px #007ba581,
+        3px 5px #007ba581,
+        4px 6px #007ba581,
+        5px 7px #007ba581;
+  /*border: 3px solid #181818;*/
+  color: white;
+  padding: 20px; /* Taller header */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  border-radius: 20px;
+  margin: 10px;
+  position: relative;
+  width: 100%-10px;
+  height: 100%-10px;
+  font-family: "Roboto Condensed";
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.header-image {
+  width: 15vh; /* Adjust the width as needed */
+  height: 15vh; /* Adjust the height as needed */
+  margin-right: 10px;
+}
+
+
+.btn-secondary {
+  margin: 10px;
+}
+
+.powered-by {
+  position: absolute;
+  bottom: 0px; /* Adjust as needed */
+  right: 7px; /* Adjust as needed */
+  padding: 10px; /* Optional: Add padding */
+  font-family: 'Century Gothic';
+  font-weight: 900;
+}
+
+.dropdown {
+  margin: 10px;
+}
+
+.chat {
+  --rad: 20px;
+  --rad-sm: 3px;
+  font: 16px/1.5 sans-serif;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 80%;
+  margin: auto;
+}
+
+span{
+  display: flex;
+}
+
+.msg {
+  position: relative;
+  max-width: 75%;
+  padding: 7px 15px;
+  margin-bottom: 2px;
+}
+
+.msg.sent {
+  border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
+  box-shadow:  
+        1px 0px #3581c0,
+        2px 1px #3581c0,
+        3px 2px #3581c0,
+        4px 3px #3581c0,
+        5px 4px #3581c0;
+  background: #42a5f5;
+  color: #fff;
+  /* moves it to the right */
+  margin-left: auto;
+}
+
+
+.msg.rcvd {
+  border-radius: var(--rad) var(--rad) var(--rad) var(--rad-sm);
+  box-shadow:  
+        -1px 0px #a0a0a0,
+        -2px 1px #a0a0a0,
+        -3px 2px #a0a0a0,
+        -4px 3px #a0a0a0,
+        -5px 4px #a0a0a0;
+  background: #f1f1f1;
+  color: #555;
+  /* moves it to the left */
+  margin-right: auto;
+}
+
+.profileImageRcvd {
+  margin-right: 10px;
+}
+
+.profileImageSent {
+  margin-left: 10px;
+}
+
+/* Improve radius for messages group */
+
+.msg.sent:first-child,
+.msg.rcvd+.msg.sent {
+  border-top-right-radius: var(--rad);
+}
+
+.msg.rcvd:first-child,
+.msg.sent+.msg.rcvd {
+  border-top-left-radius: var(--rad);
+}
+
+/* time */
+
+.msg::before {
+  content: attr(data-time);
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 100%;
+  color: #b4b4b4;
+  white-space: nowrap;
+  /* Hidden by default */
+  display: none;
+}
+
+.msg.sent::before {
+  right: 15px;
+}
+
+.msg.rcvd::before {
+  left: 15px;
+}
+
+
+/* Show time only for first message in group */
+
+.msg:first-child::before{
+  /* Show only for first message in group */
+  display: block;
+}
+.msg.sent+.msg.rcvd::before{
+  /* Show only for first message in group */
+  display: block;
+}
+.msg.rcvd+.msg.sent::before {
+  /* Show only for first message in group */
+  display: block;
+}
+
+.chat-input {
+  margin: auto;
+  max-width: 80%;
+  border-radius: 6px;
+  font-family: "Roboto Condensed";
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  border: none;
+  box-shadow:  
+        0px 0px #a0a0a0,
+        1px 0px #a0a0a0,
+        1px 1px #a0a0a0,
+        1px 2px #a0a0a0,
+        2px 3px #a0a0a0,
+        2px 4px #a0a0a0;
+}
+
+.chat-input button {
+  justify-content: flex-start;
+  position: relative;
+  bottom: 0vh;
+  right: 0vh;
+  height: 5dvh;
+  padding: 0vh 3vh;
+  border: none;
+  background-color: #42a5f5;
+  box-shadow:  
+        0px 0px #3581c0,
+        1px 1px #3581c0,
+        1px 2px #3581c0,
+        2px 3px #3581c0,
+        2px 4px #3581c0;
+  color: white;
+  cursor: pointer;
+}
+
+.chat-bubble {
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.input-container {
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Send Button Hover Effect */
+.chat-input button:hover {
+  background-color: #3581c0;
+}
+
+.chat-input button:active {
+  background-color: #0064b5;
+}
+
+.header-text {
+  flex-grow: 1; /* Allow the text to grow and fill the remaining space */
+}
