@@ -20,38 +20,21 @@ const App = (props) => {
     }
   };
 
-  const [messages, setMessages] = useState(
-  [{
-    text: "Hello",
-    sender: "person"
-  },
-  {
-    text: "This is a test for a long sentence",
-    sender: "bot"
-  },
-  {
-    text: "I sent another message",
-    sender: "bot"
-  },
-  {
-    text: "Hello",
-    sender: "person"
-  },
-  {
-    text: "This is a test for a long sentence",
-    sender: "bot"
-  }]);
+  const [messages, setMessages] = useState([]);
 
   const [index, setIndex] = useState(0);
 
   const sendMessage = async (input) => {
-    //console.log(input);
+    // console.log(log);
     if (!input.trim()){
       return; // Avoid sending empty messages
     }
 
     // Add the user's input to messages for immediate UI update
     setMessages((messages) => [...messages, { text: input, sender: 'person' },]);
+
+    // Add the bot's response to messages (was data.reply)
+    // setMessages((messages) => [...messages, { text: "I AM THE BOT RESPONSE", sender: 'bot' }, ]);
 
     scrollToBottom();
 
@@ -82,7 +65,7 @@ const App = (props) => {
         setMessages((messages) => [...messages, { text: data_searched_message, sender: 'bot' },]);
       }
     
-      // Add the bot's response to messages
+      // Add the bot's response to messages (was data.reply)
       setMessages((messages) => [...messages, { text: data.reply, sender: 'bot' }, ]);
     } catch (error) {
       console.error('There was a problem sending/receiving the message:', error);
