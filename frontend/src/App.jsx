@@ -20,27 +20,7 @@ const App = (props) => {
     }
   };
 
-  const [messages, setMessages] = useState(
-  [{
-    text: "Hello",
-    sender: "person"
-  },
-  {
-    text: "This is a test for a long sentence",
-    sender: "bot"
-  },
-  {
-    text: "I sent another message",
-    sender: "bot"
-  },
-  {
-    text: "Hello",
-    sender: "person"
-  },
-  {
-    text: "This is a test for a long sentence",
-    sender: "bot"
-  }]);
+  const [messages, setMessages] = useState([]);
 
   const [index, setIndex] = useState(0);
 
