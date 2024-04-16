@@ -4,6 +4,7 @@ all_data/
 cleaned_data/
 saved_models/
 twitter_api_key.txt
+backend/api_key.txt
 
 # Ignore the virtual environment
 .venv/

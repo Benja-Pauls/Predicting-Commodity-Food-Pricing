@@ -3,7 +3,7 @@
 }
 
 .App {
-  background-color: #181818;
+  background-color: #ffffff;
   padding-bottom: 10px;
   height: flex;
   min-height: 100vh;
@@ -15,7 +15,7 @@ header {
   width:100%;
   padding:10px;
   padding-bottom:2px;
-  background-color: #181818;
+  background-color: #ffffff;
   z-index: 10000;
 }
 
@@ -29,32 +29,33 @@ footer {
   z-index: 10001;
   margin-bottom:10px;
   width:100%;
-  background-color: #181818;
+  background-color: #ffffff;
 }
 
 .chat-header {
-  background-color: #009FDC;
-  box-shadow:  
-        1px 3px #007ba581,
-        2px 4px #007ba581,
-        3px 5px #007ba581,
-        4px 6px #007ba581,
-        5px 7px #007ba581;
-  /*border: 3px solid #181818;*/
-  color: white;
-  padding: 20px; /* Taller header */
-  display: flex;
-  align-items: center; /* Center items vertically */
-  border-radius: 20px;
-  margin: 10px;
-  position: relative;
-  width: 100%-10px;
-  height: 100%-10px;
-  font-family: "Roboto Condensed";
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
+    background-color: #009FDC;
+    box-shadow:  
+      1px 3px #007ba581,
+      2px 4px #007ba581,
+      3px 5px #007ba581,
+      4px 6px #007ba581,
+      5px 7px #007ba581;
+    color: white;
+    padding: 20px; /* Taller header */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    border-radius: 20px;
+    margin: 10px auto; /* Center horizontally */
+    position: relative;
+    max-width: 85%;
+    width: 85%;
+    height: calc(100% - 100px); /* Adjusted height calculation */
+    font-family: "Roboto Condensed";
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
 
 .header-image {
   width: 15vh; /* Adjust the width as needed */
@@ -77,7 +78,7 @@ footer {
 }
 
 .dropdown {
-  margin: 10px;
+  margin-right: 50%;
 }
 
 .chat {
@@ -95,11 +96,11 @@ span{
 }
 
 .msg {
-  position: relative;
-  max-width: 75%;
-  padding: 7px 15px;
-  margin-bottom: 2px;
-}
+    position: relative;
+    max-width: 75%;
+    padding: 10px 15px;  /* Increased padding inside each message bubble */
+    margin-bottom: 15px; /* Increased spacing between messages */
+  }  
 
 .msg.sent {
   border-radius: var(--rad) var(--rad-sm) var(--rad-sm) var(--rad);
@@ -111,6 +112,7 @@ span{
         5px 4px #3581c0;
   background: #42a5f5;
   color: #fff;
+  font-weight: bold;
   /* moves it to the right */
   margin-left: auto;
 }
@@ -125,7 +127,8 @@ span{
         -4px 3px #a0a0a0,
         -5px 4px #a0a0a0;
   background: #f1f1f1;
-  color: #555;
+  color: #6a6a6a;
+  font-weight: bold;
   /* moves it to the left */
   margin-right: auto;
 }

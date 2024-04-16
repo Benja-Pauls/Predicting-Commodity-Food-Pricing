@@ -18,7 +18,7 @@ const MessageBox = (props) => {
             )
         } else {
             user = "User";
-            img = './FAO_logo_white.png'; //Insert image path here
+            img = './person_profile.png'; //Insert image path here
             msgClassName = "msg sent";
             return (
                 <span>
