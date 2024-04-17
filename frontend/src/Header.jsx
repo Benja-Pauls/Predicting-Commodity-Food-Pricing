@@ -45,7 +45,7 @@ const Header = (props) => {
         {name: "Thai"},
         {name: "German"},
         {name: "Italian"}
-        // Add more languages as needed
+        // TODO: Add more languages after researching compatability
     ];
 
     return (
